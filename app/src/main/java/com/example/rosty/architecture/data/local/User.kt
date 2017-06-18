@@ -8,10 +8,10 @@ import android.os.Parcelable
 
 import com.example.rosty.architecture.data.remote.model.UserResponse
 
-@Entity
+@Entity(tableName = "user")
 class User {
 
-    @PrimaryKey var id: Int? = null
+    @PrimaryKey @ColumnInfo(name = "id") var id: Int? = null
 
     @ColumnInfo(name = "login")         var login: String? = null
     @ColumnInfo(name = "avatar_url")    var avatarUrl: String? = null
@@ -30,6 +30,8 @@ class User {
     @ColumnInfo(name = "createdAt")     var createdAt: String? = null
 
     var isSaved: Boolean = false
+
+    constructor() {}
 
     constructor(login: String) {
         this.login = login
@@ -53,5 +55,15 @@ class User {
         followers   = userResponse.followers
         following   = userResponse.following
         createdAt   = userResponse.createdAt
+    }
+
+    override fun toString(): String {
+
+        return "User(id=$id, login=$login, avatarUrl=$avatarUrl, " +
+                "url=$url, htmlUrl=$htmlUrl, name=$name, " +
+                "company=$company, blog=$blog, location=$location, " +
+                "email=$email, bio=$bio, publicRepos=$publicRepos, " +
+                "publicGists=$publicGists, followers=$followers, following=$following, " +
+                "createdAt=$createdAt, isSaved=$isSaved)"
     }
 }

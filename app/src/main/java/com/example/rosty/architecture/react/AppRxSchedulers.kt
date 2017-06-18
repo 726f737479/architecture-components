@@ -19,7 +19,7 @@ import javax.inject.Inject
  * Created by Rosty on 10/18/2016.
  */
 
-class BoilerplateRxSchedulers @Inject constructor() : RxSchedulers {
+class AppRxSchedulers @Inject constructor() : RxSchedulers {
 
     private val db: Scheduler
 

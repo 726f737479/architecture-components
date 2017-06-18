@@ -4,6 +4,7 @@ import com.example.rosty.architecture.data.local.AppDataBase
 import com.example.rosty.architecture.data.local.User
 import com.example.rosty.architecture.data.remote.GithubApiService
 import com.example.rosty.architecture.react.RxSchedulers
+import io.reactivex.Flowable
 
 import java.io.IOException
 
@@ -31,13 +32,13 @@ class DataSourceImpl @Inject constructor(private val dataBase: AppDataBase,
                         .flatMap { e -> Observable.error<Throwable> { if (e is IOException) RuntimeException(e) else e } } }
     }
 
-    override fun searchSavedUsers(searchTerm: String): Observable<List<User>> {
+    override fun searchSavedUsers(searchTerm: String): Flowable<List<User>> {
 
         return dataBase.userDao().searchInSavedUser(searchTerm)
                 .subscribeOn(schedulers.db())
     }
 
-    override fun getSavedUsers(): Observable<List<User>> {
+    override fun getSavedUsers(): Flowable<List<User>> {
 
         return dataBase.userDao().all
                 .subscribeOn(schedulers.db())

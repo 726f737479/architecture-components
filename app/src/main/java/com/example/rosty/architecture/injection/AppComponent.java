@@ -1,5 +1,6 @@
 package com.example.rosty.architecture.injection;
 
+import com.example.rosty.architecture.data.DataSource;
 import com.example.rosty.architecture.presentation.MainViewModel;
 
 import javax.inject.Singleton;
@@ -13,6 +14,8 @@ import dagger.Component;
 @Singleton
 @Component(modules = {AppModule.class})
 public interface AppComponent {
+
+    DataSource dataSource();
 
     void inject(MainViewModel viewModel);
 
