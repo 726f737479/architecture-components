@@ -1,19 +1,19 @@
-package com.example.rosty.architecture.presentation
+package com.example.rosty.architecture.presentation.base
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.LifecycleRegistryOwner
 import android.arch.lifecycle.OnLifecycleEvent
 import android.arch.lifecycle.ViewModel
-import com.example.rosty.architecture.injection.AppComponent
+import io.reactivex.Flowable
+import io.reactivex.FlowableTransformer
 
 import io.reactivex.Observable
+import io.reactivex.ObservableTransformer
 import io.reactivex.subjects.BehaviorSubject
 
-open class BaseViewModel : ViewModel(), LifecycleObserver{
+open class BaseViewModel : ViewModel(), LifecycleObserver {
 
-    private val lifecycle       = BehaviorSubject.create<Lifecycle.Event>()
-    private val lifecycleOwner  = BehaviorSubject.create<LifecycleRegistryOwner>()
+    protected val lifecycle = BehaviorSubject.create<Lifecycle.Event>()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
@@ -46,6 +46,10 @@ open class BaseViewModel : ViewModel(), LifecycleObserver{
     }
 
     fun <T> Observable<T>.bindUntilEvent(event: Lifecycle.Event): Observable<T> {
-        return takeUntil(lifecycle.takeWhile { e -> e != event })
+        return takeUntil( lifecycle.filter { it == event }.take(1))
+    }
+
+    fun <T> Flowable<T>.bindUntilEvent(event: Lifecycle.Event): Flowable<T> {
+        return takeUntil<T> { lifecycle.filter { it == event }.take(1) }
     }
 }

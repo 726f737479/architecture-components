@@ -37,6 +37,11 @@ class User {
         this.login = login
     }
 
+    constructor(id: Int, login: String) {
+        this.id     = id
+        this.login  = login
+    }
+
     constructor(userResponse: UserResponse) {
 
         login       = userResponse.login

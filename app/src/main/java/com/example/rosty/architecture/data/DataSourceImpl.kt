@@ -45,12 +45,15 @@ class DataSourceImpl @Inject constructor(private val dataBase: AppDataBase,
     }
 
     override fun saveUser(user: User) {
-
         dataBase.userDao().insertAll(user)
     }
 
     override fun deleteUser(user: User) {
-
         dataBase.userDao().delete(user)
     }
+
+    override fun updateUser(user: User) {
+        dataBase.userDao().update(user)
+    }
+
 }

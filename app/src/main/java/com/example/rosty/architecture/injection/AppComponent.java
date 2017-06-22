@@ -1,7 +1,7 @@
 package com.example.rosty.architecture.injection;
 
 import com.example.rosty.architecture.data.DataSource;
-import com.example.rosty.architecture.presentation.MainViewModel;
+import com.example.rosty.architecture.presentation.home.MainViewModel;
 
 import javax.inject.Singleton;
 

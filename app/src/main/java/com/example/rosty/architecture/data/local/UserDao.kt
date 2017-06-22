@@ -1,9 +1,6 @@
 package com.example.rosty.architecture.data.local
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
+import android.arch.persistence.room.*
 import io.reactivex.Flowable
 
 @Dao
@@ -23,4 +20,7 @@ interface UserDao {
 
     @Delete
     fun delete(user: User)
+
+    @Update
+    fun update(user: User)
 }

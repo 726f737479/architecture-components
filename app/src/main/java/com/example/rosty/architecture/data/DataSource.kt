@@ -14,4 +14,5 @@ interface DataSource {
 
     fun saveUser(user: User)
     fun deleteUser(user: User)
+    fun updateUser(user: User)
 }

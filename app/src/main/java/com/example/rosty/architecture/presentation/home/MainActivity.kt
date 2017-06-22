@@ -1,10 +1,9 @@
-package com.example.rosty.architecture.presentation
+package com.example.rosty.architecture.presentation.home
 
 import android.arch.lifecycle.LifecycleActivity
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import com.example.rosty.architecture.ArchiApplication
 import com.example.rosty.architecture.R
 import com.example.rosty.architecture.databinding.ActivityMainBinding
 import com.example.rosty.architecture.injection.AppFactory
