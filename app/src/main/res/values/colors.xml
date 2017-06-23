@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background_white">#fafafa</color>
+    <color name="background_gray">#eeeeee</color>
+    <color name="background_holder">#767676</color>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="colorGrayTransparent">#a0393939</color>
+
+
+    <color name="icon_gray">#747474</color>
+    <color name="icon_empty">#dfdfdf</color>
+
+    <color name="text_empty">#c1c0c1</color>
+    <color name="text_hint">#bdbdbd</color>
+    <color name="text_body">#232323</color>
 </resources>

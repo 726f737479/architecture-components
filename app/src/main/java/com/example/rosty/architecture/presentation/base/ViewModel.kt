@@ -11,7 +11,7 @@ import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.subjects.BehaviorSubject
 
-open class BaseViewModel : ViewModel(), LifecycleObserver {
+open class ViewModel : ViewModel(), LifecycleObserver {
 
     protected val lifecycle = BehaviorSubject.create<Lifecycle.Event>()
 

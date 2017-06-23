@@ -1,13 +1,9 @@
 package com.example.rosty.architecture.presentation.home
 
-import com.example.rosty.architecture.data.DataSource
 import com.example.rosty.architecture.injection.AppComponent
-import com.example.rosty.architecture.presentation.base.BaseViewModel
-import javax.inject.Inject
+import com.example.rosty.architecture.presentation.base.ViewModel
 
-class MainViewModel : BaseViewModel(), AppComponent.Injectable {
-
-    @Inject lateinit var source: DataSource
+class MainViewModel : ViewModel(), AppComponent.Injectable {
 
     override fun inject(appComponent: AppComponent?) {
         appComponent?.inject(this)

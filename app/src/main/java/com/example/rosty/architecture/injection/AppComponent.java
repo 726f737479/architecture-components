@@ -2,6 +2,7 @@ package com.example.rosty.architecture.injection;
 
 import com.example.rosty.architecture.data.DataSource;
 import com.example.rosty.architecture.presentation.home.MainViewModel;
+import com.example.rosty.architecture.presentation.home.users.UsersViewModel;
 
 import javax.inject.Singleton;
 
@@ -18,6 +19,7 @@ public interface AppComponent {
     DataSource dataSource();
 
     void inject(MainViewModel viewModel);
+    void inject(UsersViewModel viewModel);
 
     interface Injectable {
         void inject(AppComponent appComponent);

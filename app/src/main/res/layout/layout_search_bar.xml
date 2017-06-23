@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_height="@dimen/height_searchbar"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="@dimen/margin"/>
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_search"
+                   android:padding="@dimen/margin"/>
+
+        <EditText android:id="@+id/etSearchText"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_marginStart="@dimen/margin"
+                  android:gravity="center_vertical"
+                  android:inputType="text"
+                  android:maxLines="1"
+                  android:background="@null"
+                  android:hint="@string/hint_search"
+                  android:textColorHint="@color/text_hint"
+                  android:textColor="@color/text_body"
+                  android:layout_weight="1"/>
+
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_clear"
+                   android:padding="@dimen/margin"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.rosty.architecture.data.local.User"/>
+
+        <variable
+            name="action"
+            type="com.example.rosty.architecture.presentation.base.ItemAction"/>
+
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:onClick="@{v -> action.click(user)}"
+            android:layout_height="88dp"
+            android:elevation="@dimen/elevation_content"
+            android:background="@color/background_white"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="@dimen/ic_medium"
+                android:layout_height="@dimen/ic_medium"
+                android:id="@+id/userAvatar"
+                android:scaleType="centerInside"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/bg_holder_oval"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="72dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:text="@{user.name ?? @string/hint_no_name}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="rostdev"/>
+
+            <TextView
+                    android:text="@{user.login}"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_text"
+                    tools:text="http://github/ghfhfgh/hjfjfj"/>
+
+            <TextView
+                    android:text="@{user.bio ?? @string/hint_bio}"
+                    android:layout_width="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="2dp"
+                    tools:text="Hello mu name is Trolololorgf dfsgdfg fdgdfgfdg"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="@dimen/divider"
+              android:layout_marginStart="72dp"
+              android:layout_gravity="bottom"
+              android:background="#ebebeb"/>
+
+        <TextView
+                android:text='@{Integer.toString(user.followers) + " followers"}'
+                android:layout_width="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_margin="@dimen/margin"
+                android:layout_gravity="top|end"
+                tools:text="12 followers"/>
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{user.saved}"
+                android:onClick="@{v -> action.invoke(user)}"
+                android:button="@drawable/selector_btn_star"
+                android:paddingEnd="@dimen/margin"
+                android:paddingBottom="@dimen/margin"
+                android:paddingTop="@dimen/margin"
+                android:layout_gravity="bottom|end"
+                android:id="@+id/appCompatRadioButton"/>
+
+    </FrameLayout>
+
+</layout>

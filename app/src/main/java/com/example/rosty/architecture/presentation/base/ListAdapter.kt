@@ -13,10 +13,12 @@ import android.view.ViewGroup
  * Created by rosty on 6/22/17.
  */
 
-abstract class BaseListAdapter<T, DB : ViewDataBinding>(
+abstract class ListAdapter<T, DB : ViewDataBinding>(
 
         @LayoutRes private val layoutRes: Int,
-        private var data: ObservableList<T>?
+
+        protected var data:   ObservableList<T>?,
+        protected var action: ItemAction<T>
 
 ) : RecyclerView.Adapter<ViewHolder<DB>>() {
 
@@ -60,10 +62,6 @@ abstract class BaseListAdapter<T, DB : ViewDataBinding>(
 
     fun getItem(position: Int): T? {
         return if (data != null && position < data!!.size) data!![position] else null
-    }
-
-    fun getData(): ObservableList<T>? {
-        return data
     }
 
     @CallSuper fun updateData(data: ObservableList<T>) {
