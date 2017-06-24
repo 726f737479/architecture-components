@@ -45,6 +45,8 @@ abstract class ListAdapter<T, DB : ViewDataBinding>(
                 notifyItemRangeRemoved(positionStart, itemCount)
             }
         }
+
+        this.data!!.addOnListChangedCallback(changesCallback)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<DB> {

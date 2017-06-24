@@ -18,6 +18,12 @@
             android:layout_weight="1"
             android:background="@color/background_gray">
 
+            <fragment
+                android:id="@+id/frag_users"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.example.rosty.architecture.presentation.home.users.UsersFragment"/>
+
         </FrameLayout>
 
         <android.support.design.widget.BottomNavigationView

@@ -5,6 +5,7 @@ import com.example.rosty.architecture.presentation.home.MainViewModel;
 import com.example.rosty.architecture.presentation.home.settings.SettingsViewModel;
 import com.example.rosty.architecture.presentation.home.repos.ReposViewModel;
 import com.example.rosty.architecture.presentation.home.users.UsersViewModel;
+import com.example.rosty.architecture.react.RxSchedulers;
 
 import javax.inject.Singleton;
 
@@ -16,6 +17,7 @@ import dagger.Component;
 public interface AppComponent {
 
     DataSource dataSource();
+    RxSchedulers rxSchedulers();
 
     void inject(MainViewModel viewModel);
     void inject(UsersViewModel viewModel);

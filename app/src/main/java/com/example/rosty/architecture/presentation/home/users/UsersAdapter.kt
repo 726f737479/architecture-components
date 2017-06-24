@@ -15,6 +15,6 @@ class UsersAdapter(layoutRes: Int, data: ObservableList<User>?, action: ItemActi
     override fun onBindViewHolder(holder: ViewHolder<ItemUserBinding>?, position: Int) {
 
         holder?.binding?.action = action
-        holder?.binding?.user = getItem(position)
+        holder?.binding?.user   = getItem(position)
     }
 }

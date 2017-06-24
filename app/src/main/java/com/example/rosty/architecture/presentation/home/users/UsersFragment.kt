@@ -14,6 +14,7 @@ import com.example.rosty.architecture.databinding.FragmentUsersBinding
 import com.example.rosty.architecture.databinding.ItemUserBinding
 import com.example.rosty.architecture.injection.AppFactory
 import com.example.rosty.architecture.presentation.base.ListAdapter
+import com.example.rosty.architecture.util.onTextChange
 
 
 class UsersFragment : LifecycleFragment() {
@@ -34,9 +35,16 @@ class UsersFragment : LifecycleFragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         adapter = UsersAdapter(R.layout.item_user, viewModel.users, viewModel);
+
+        binding.vm = viewModel
+        binding.listUsers.adapter = adapter
+        binding.searchBar.query = viewModel.query
+        binding.searchBar.etQuery.onTextChange { viewModel.query.set(it) }
+        binding.searchBar.btnClear.setOnClickListener { binding.searchBar.etQuery.text.clear() }
     }
 }
+

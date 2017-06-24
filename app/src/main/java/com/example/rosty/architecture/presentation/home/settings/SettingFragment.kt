@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.rosty.architecture.R
-import com.example.rosty.architecture.databinding.FragmentIssuesBinding
+import com.example.rosty.architecture.databinding.FragmentSettingsBinding
 import com.example.rosty.architecture.injection.AppFactory
 import com.example.rosty.architecture.presentation.home.users.UsersViewModel
 
@@ -17,7 +17,7 @@ import com.example.rosty.architecture.presentation.home.users.UsersViewModel
 class SettingFragment : LifecycleFragment() {
 
     lateinit var viewModel: UsersViewModel
-    lateinit var binding:   FragmentIssuesBinding
+    lateinit var binding:   FragmentSettingsBinding
 
     override fun onCreateView(inflater: LayoutInflater?,
                               container: ViewGroup?,

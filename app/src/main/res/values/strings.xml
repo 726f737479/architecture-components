@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Architecture</string>
 
-    <string name="title_search">Search</string>
-    <string name="title_saved">Saved</string>
+    <string name="title_users">Users</string>
+    <string name="title_repos">Repositories</string>
+    <string name="title_settings">Settings</string>
 
     <string name="hint_search">Enter user name</string>
     <string name="hint_bio">No information about this user…</string>
