@@ -5,9 +5,6 @@ import io.reactivex.Notification
 import io.reactivex.Observable
 import io.reactivex.subjects.ReplaySubject
 
-/**
- * Created by rosty on 6/3/17.
- */
 
 class Action {
 

@@ -6,9 +6,7 @@ import com.example.rosty.architecture.injection.AppComponent
 import com.example.rosty.architecture.injection.AppModule
 import com.example.rosty.architecture.injection.DaggerAppComponent
 
-/**
- * Created by rosty on 6/18/17.
- */
+
 
 class ArchiApplication : Application() {
 

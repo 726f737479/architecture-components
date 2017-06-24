@@ -9,9 +9,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-/**
- * Created by rosty on 6/22/17.
- */
 
 abstract class ListAdapter<T, DB : ViewDataBinding>(
 

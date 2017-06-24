@@ -7,9 +7,6 @@ import com.example.rosty.architecture.presentation.base.ItemAction
 import com.example.rosty.architecture.presentation.base.ListAdapter
 import com.example.rosty.architecture.presentation.base.ViewHolder
 
-/**
- * Created by rosty on 6/23/17.
- */
 
 class UsersAdapter(layoutRes: Int, data: ObservableList<User>?, action: ItemAction<User>)
 

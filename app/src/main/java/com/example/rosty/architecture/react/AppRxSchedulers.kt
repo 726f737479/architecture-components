@@ -14,11 +14,6 @@ import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject
 
 
-
-/**
- * Created by Rosty on 10/18/2016.
- */
-
 class AppRxSchedulers @Inject constructor() : RxSchedulers {
 
     private val db: Scheduler

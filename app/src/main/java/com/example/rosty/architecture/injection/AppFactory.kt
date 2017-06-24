@@ -5,11 +5,7 @@ import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 
 import com.example.rosty.architecture.ArchiApplication
-/**
- * @author rebeccafranks
- * *
- * @since 2017/05/10.
- */
+
 
 class AppFactory(private val application: Application) : ViewModelProvider.NewInstanceFactory() {
 
